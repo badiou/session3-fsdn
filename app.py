@@ -32,6 +32,7 @@ class Etudiant(db.Model):
     prenom = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(50), nullable=False, unique=True)
     adresse = db.Column(db.String(200), nullable=True)
+    #pays = db.Column(db.String(200), nullable=True)
     filiere_id = db.Column(db.Integer, db.ForeignKey('filieres.id'),
                           nullable=False)
 
