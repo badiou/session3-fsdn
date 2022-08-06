@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <a  class="btn btn-default mb-3" href="/etudiants"> << Retour</a>
+        <h2>Création d'un étudiant</h2>
+   
+
+<form method="POST" action="/add_etudiant" class="form-group">
+    <input type="text" name="nom" placeholder="Saisir le Nom" class="form-control mx-3">
+    <br>
+    <input type="text" name="prenom" placeholder="Saisir le Prenom" class="form-control mx-3">
+    <br>
+    <input type="text" name="adresse" placeholder="Saisir l'adresse" class="form-control mx-3">
+    <br>
+    <input type="text" name="email" placeholder="Saisir l'email" class="form-control mx-3">
+    <br>
+    <label for="sel1">Selectionner la filière:</label>
+    <select class="form-control" name="filiere_id" id="sel1">
+        {%for d in filieres %}
+            <option value="{{d.id}}">{{d.libellefiliere}}</option>
+        {% endfor%}
+    </select>
+    <br> 
+    <input type="submit" value="Enregistrer" class="btn btn-success">
+</form>
+</div>
+{% endblock %}
+    

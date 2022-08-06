@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Modifier une filière</h2>
+    Voulez-vous modifier la filiere: {{data.libellefiliere}} ?
+    <br>
+    <form action="/filieres/{{data.id}}" method="POST" class="form-group">
+        <input type="text" name="libellefiliere" value="{{data.libellefiliere}}" class="form-control mx-3">
+        <br/>
+        <input type="submit" value="Valider" class="btn btn-success">
+    </form>
+</div>
+
+{% endblock %}

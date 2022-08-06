@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <a  class="btn btn-default mb-3" href="/filieres"> << Retour</a>
+        <h2>Création d'une filière</h2>
+   
+
+<form method="POST" action="/add_filiere">
+    <input type="text" name="libellefiliere" placeholder="Saisir le libellé" class="form-control mx-3">
+    <br><br>
+    <input type="submit" value="Enregistrer" class="btn btn-success">
+</form>
+</div>
+{% endblock %}
+    

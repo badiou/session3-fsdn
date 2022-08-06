@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    
+    <h2>Liste des filières</h2>
+<a  class="btn btn-info" href="/add_filiere">Nouveau</a> 
+
+     
+<table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Libelle filiere</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for d in data %}
+                    <tr>
+                        <th scope="row">{{d.id}}</th>
+                        <td>{{d.libellefiliere}}</td>
+                        <td><a  class="btn btn-primary" href="/filieres/{{d.id}}">Modifier</a></td>
+                        <td><a  class="btn btn-danger" href="#">Supprimer</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+    </div>
+{% endblock %}

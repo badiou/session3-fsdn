@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    
+    <h2>Liste des etudiants</h2>
+<a  class="btn btn-info" href="/add_etudiant">Nouveau</a> 
+
+     
+<table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Email</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Libelle filiere</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for d in data %}
+                    <tr>
+                        <th scope="row">{{d.id}}</th>
+                        <td>{{d.nom}}</td>
+                        <td>{{d.prenom}}</td>
+                        <td>{{d.email}}</td>
+                        <td>{{d.adresse}}</td>
+                        <td>{{d.filieres.libellefiliere}}</td>
+                        <td><a  class="btn btn-primary" href="/etudiants/{{d.id}}">Modifier</a></td>
+                        <td><a  class="btn btn-danger" href="#">Supprimer</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+    </div>
+{% endblock %}
